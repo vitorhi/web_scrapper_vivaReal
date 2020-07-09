@@ -1,0 +1,24 @@
+{
+  "name": "web_scrapper_vivaReal",
+  "version": "1.0.0",
+  "description": "Web Scrapper de imóveis para o site da Viva Real",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitorhi/web_scrapper_vivaReal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vitorhi/web_scrapper_vivaReal/issues"
+  },
+  "homepage": "https://github.com/vitorhi/web_scrapper_vivaReal#readme",
+  "dependencies": {
+    "puppeteer": "^5.0.0",
+    "readline-sync": "^1.4.10"
+  }
+}

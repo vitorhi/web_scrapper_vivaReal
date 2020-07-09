@@ -2,13 +2,16 @@
 Web Scrapper de aluguel imóveis para o site da Viva Real, utilizando NodeJs
 
 ## Instalação
+Pacotes npm utilizados:
+* puppeteer
+* readLine-sync
 
 Utilize o comando abaixo para instalar os pacotes necessários
+
 `npm install`
 
 ## Utilização
-1. Rodar script _scraper.js_ com comando:
-`node scraper.js`
+1. Rodar script _scraper.js_ com comando:`node scraper.js`
 
 2. Selecionar o bairro com um número.
 3. Selecionar em quantas páginas deseja procurar.

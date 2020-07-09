@@ -76,9 +76,22 @@ async function scrapeProduct(url,nome_bairro,readline){
 
 
   		let el=await page2.evaluate(() => {
-  			let titulo = document.querySelector('div[class="title__content-wrapper"]>h1').innerText;
-  			let aluguel = document.querySelector('div[class="price__content-wrapper"]>h3').innerText;
-  			let condominio = document.querySelector('div[class="price__cta-wrapper"]>ul>li>span[class="price__list-value condominium js-condominium"]');
+
+        let titulo = document.querySelector('div[class="title__content-wrapper"]>h1').innerText;
+
+        let aluguel = document.querySelector('div[class="price-container"]>div>div>div>h3.price__price-info ');
+
+        // Ver se o preco do aluguel está na tag de preco de compra ou de aluguel
+        if (aluguel == null) {
+          // Aluguel está na tag de preco de compra
+          aluguel=document.querySelector('div[class="price-container"]>div>div>h3[class="price__price-info js-price-sale"]').innerText;
+        }
+        else{
+          // Aluguel está na tag de preco de aluguel
+          aluguel= aluguel.innerText;
+        }
+
+        let condominio = document.querySelector('div[class="price__cta-wrapper"]>ul>li>span[class="price__list-value condominium js-condominium"]');
   			if (condominio!=null){
   				condominio=condominio.innerText;
   			}
@@ -117,6 +130,7 @@ async function scrapeProduct(url,nome_bairro,readline){
           console.log(err);
       }
   });
+  console.log('Imóveis Selecionados com sucesso !');
 }
 
 var readline = require('readline-sync');
